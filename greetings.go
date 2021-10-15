@@ -10,6 +10,7 @@ func Hello(name string, lastname string) string {
 	return addition
 }
 
+//testing
 func Age(year int) int {
 	age := 2021 - year
 	return age
