@@ -1,13 +1,20 @@
 package greetings
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
-func Hello(name string, lastname string) string {
+func Hello(name string, lastname string) (string, error) {
 	var addition string
+
+	if name == "" {
+		return "", errors.New("empty name")
+	}
 
 	message := fmt.Sprintf("Hi, %v. Welcome!", name)
 	addition = message + fmt.Sprintf("to your first go code %v", lastname)
-	return addition
+	return addition, nil
 }
 
 //testing
